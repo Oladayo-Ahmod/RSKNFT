@@ -41,7 +41,7 @@ function Content(){
                                             </span>
                                         
                                             <div className="nft_pic_wrap">
-                                                <Image src="images/carousel/crs-13.jpg" width={546} height={546} className="lazy Image-fluid" alt="" />
+                                                <Image src="/carousel/crs-13.jpg" width={546} height={546} className="lazy Image-fluid" alt="" />
                                             </div>
                                         </a>
                                     </div>
@@ -54,7 +54,7 @@ function Content(){
                                             </span>
                                         
                                             <div className="nft_pic_wrap">
-                                                <Image width={546} height={546} src="images/carousel/crs-16.jpg" className="lazy Image-fluid" alt="" />
+                                                <Image width={546} height={546} src="/carousel/crs-16.jpg" className="lazy Image-fluid" alt="" />
                                             </div>
                                         </a>
                                     </div>
@@ -67,7 +67,7 @@ function Content(){
                                             </span>
                                             
                                             <div className="nft_pic_wrap">
-                                                <Image src="images/carousel/crs-17.jpg" width={546} height={546} className="lazy Image-fluid" alt="" />  
+                                                <Image src="/carousel/crs-17.jpg" width={546} height={546} className="lazy Image-fluid" alt="" />  
                                             </div>
                                         </a>
                                     </div>
@@ -81,7 +81,7 @@ function Content(){
                                             </span>
                                             
                                             <div className="nft_pic_wrap">
-                                                <Image width={546} height={546} src="images/carousel/crs-15.jpg" className="lazy Image-fluid" alt="" />
+                                                <Image width={546} height={546} src="/carousel/crs-15.jpg" className="lazy Image-fluid" alt="" />
                                             </div>
                                         </a>
                                     </div>
@@ -94,7 +94,7 @@ function Content(){
                                             </span>
                                             
                                             <div className="nft_pic_wrap">
-                                                <Image width={546} height={546} src="images/carousel/crs-14.jpg" className="lazy Image-fluid" alt="" />
+                                                <Image width={546} height={546} src="/carousel/crs-14.jpg" className="lazy Image-fluid" alt="" />
                                             </div>
                                         </a>
                                     </div>
@@ -114,42 +114,42 @@ function Content(){
                 <div className="row">
                     <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay=".2s">
                         <a className="box-url style-2" href="login.html">
-                            <Image src="images/wallet/1.png" alt="" className="mb20"  />
+                            <Image src="/wallet/1.png" alt="" className="mb20" width={70} height={70}  />
                             <h4>Metamask</h4>
                         </a>
                     </div>
 
                     <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay=".4s">
                         <a className="box-url style-2" href="login.html">
-                            <Image src="images/wallet/2.png" alt="" className="mb20"  />
+                            <Image src="/wallet/2.png" alt="" className="mb20"  width={70} height={70}  />
                             <h4>Bitski</h4>
                         </a>
                     </div>
 
                     <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay=".6s">
                         <a className="box-url style-2" href="login.html">
-                            <Image src="images/wallet/3.png" alt="" className="mb20"  />
+                            <Image src="/wallet/3.png" alt="" className="mb20"  width={70} height={70}  />
                             <h4>Fortmatic</h4>
                         </a>
                     </div>
 
                     <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay=".8s">
                         <a className="box-url style-2" href="login.html">
-                            <Image src="images/wallet/4.png" alt="" className="mb20" />
+                            <Image src="/wallet/4.png" alt="" className="mb20"  width={70} height={70}  />
                             <h4>WalletConnect</h4>
                         </a>
                     </div>
 
                     <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay="1s">
                         <a className="box-url style-2" href="login.html">
-                            <Image src="images/wallet/5.png" alt="" className="mb20" />
+                            <Image src="/wallet/5.png" alt="" className="mb20"  width={70} height={70}  />
                             <h4>Coinbase Wallet</h4>
                         </a>
                     </div>
 
                     <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay="1.2s">
                         <a className="box-url style-2" href="login.html">
-                            <Image src="images/wallet/6.png" alt="" className="mb20" />
+                            <Image src="/wallet/6.png" alt="" className="mb20"  width={70} height={70}  />
                             <h4>Arkane</h4>
                         </a>
                     </div>
