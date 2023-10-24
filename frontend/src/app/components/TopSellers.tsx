@@ -22,7 +22,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">
-                                    <Image className="lazy" src="images/author/author-1.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-1.jpg" alt="" width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -37,7 +37,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-2.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-2.jpg" alt="" width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -52,7 +52,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-3.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-3.jpg" alt="" width={50} height={50}/>
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -67,7 +67,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-4.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-4.jpg" alt="" width={50} height={50}/>
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -82,7 +82,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-5.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-5.jpg" alt=""width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -97,7 +97,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-6.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-6.jpg" alt="" width={50} height={50}/>
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -112,7 +112,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-7.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-7.jpg" alt="" width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -127,7 +127,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-8.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-8.jpg" alt="" width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -142,7 +142,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-9.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-9.jpg" alt="" width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -157,7 +157,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-10.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-10.jpg" alt="" width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -172,7 +172,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-11.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-11.jpg" alt="" width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -187,7 +187,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-12.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-12.jpg" alt=""  width={50} height={50}/>
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -202,7 +202,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-13.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-13.jpg" alt="" width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -217,7 +217,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-14.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-14.jpg" alt="" width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>
@@ -232,7 +232,7 @@ function TopSeller(){
                             <li>
                                 <div className="author_list_pp">
                                     <a href="author.html">                                    
-                                    <Image className="lazy" src="images/author/author-15.jpg" alt="" />
+                                    <Image className="lazy" src="/author/author-15.jpg" alt="" width={50} height={50} />
                                     <i className="fa fa-check"></i>
                                 </a>
                                 </div>

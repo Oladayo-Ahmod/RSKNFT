@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Header from './components/Header'
 import Slider from './components/Slider'
 import Wallets from './components/Wallets'
+import TopSeller from './components/TopSellers'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Header />
         <Slider />
         <Wallets />
+        <TopSeller />
         
       </main>
   )
