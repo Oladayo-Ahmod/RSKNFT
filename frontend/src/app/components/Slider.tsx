@@ -10,11 +10,11 @@ import { Navigation,Scrollbar,Autoplay } from 'swiper/modules'
 
 
 
-function Content(){
+function Slider(){
     return(
         <>
        
-            <div className="no-bottom no-top" id="content">
+            <div className="no-bottom no-top" id="Slider">
         <div id="top"></div>
         <section id="section-hero" className="no-top no-bottom mt90 sm-mt-0" aria-label="section">
             <div className="m-5 padding30 br-15 bg-custom">
@@ -32,9 +32,7 @@ function Content(){
                             <div className="d-carousel">
                             <Swiper 
                                         modules={[Navigation, Scrollbar,Autoplay]}
-                                        // spaceBetween={50}
                                         navigation
-                                        // slidesPerView={3}
                                         autoplay={{delay: 3000}}
                                         onSlideChange={(swiper)=> console.log('swiper change')}
                                         onSwiper={(swiper)=> console.log('swiper set')}
@@ -43,7 +41,7 @@ function Content(){
                                    
                                   <SwiperSlide >
                                   <div className="nft_pic mod-b br-15">
-                                        <div>
+                                        <a href='#'>
                                             <span className="nft_pic_info">
                                                 <span className="nft_pic_title">Blue Nomad</span>
                                                 <span className="nft_pic_by">Mamie Barnett</span>
@@ -52,7 +50,7 @@ function Content(){
                                             <div className="nft_pic_wrap">
                                                 <Image src={"/carousel/crs-12.jpg"} className="lazy Image-fluid" width={546} height={546} alt="" />
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                   </SwiperSlide>
 
@@ -141,77 +139,6 @@ function Content(){
             </div>
         </section>
 
-        <section aria-label="section" className="mt-20 no-top no-bottom">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay=".2s">
-                        <a className="box-url style-2" href="login.html">
-                            <Image src="/wallet/1.png" alt="" className="mb20" width={70} height={70}  />
-                            <h4>Metamask</h4>
-                        </a>
-                    </div>
-
-                    <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay=".4s">
-                        <a className="box-url style-2" href="login.html">
-                            <Image src="/wallet/2.png" alt="" className="mb20"  width={70} height={70}  />
-                            <h4>Bitski</h4>
-                        </a>
-                    </div>
-
-                    <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay=".6s">
-                        <a className="box-url style-2" href="login.html">
-                            <Image src="/wallet/3.png" alt="" className="mb20"  width={70} height={70}  />
-                            <h4>Fortmatic</h4>
-                        </a>
-                    </div>
-
-                    <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay=".8s">
-                        <a className="box-url style-2" href="login.html">
-                            <Image src="/wallet/4.png" alt="" className="mb20"  width={70} height={70}  />
-                            <h4>WalletConnect</h4>
-                        </a>
-                    </div>
-
-                    <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay="1s">
-                        <a className="box-url style-2" href="login.html">
-                            <Image src="/wallet/5.png" alt="" className="mb20"  width={70} height={70}  />
-                            <h4>Coinbase Wallet</h4>
-                        </a>
-                    </div>
-
-                    <div className="col-lg-2 col-sm-4 col-6 mb30 wow fadeInRight" data-wow-delay="1.2s">
-                        <a className="box-url style-2" href="login.html">
-                            <Image src="/wallet/6.png" alt="" className="mb20"  width={70} height={70}  />
-                            <h4>Arkane</h4>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-            <div className="test">
-            <Swiper 
-                                        modules={[Navigation, Scrollbar]}
-                                        navigation
-                                        // spaceBetween={50}
-                                        // slidesPerView={3}
-                                        autoplay={{delay: 3000}}
-                                        onSlideChange={(swiper)=> console.log('swiper change')}
-                                        onSwiper={(swiper)=> console.log('swiper set')}
-                                    >
-
-                                    <SwiperSlide>
-                                    <Image src={"/carousel/crs-12.jpg"} className="" width={546} height={546} alt="" />
-
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                    <Image width={546} height={546} src="/carousel/crs-16.jpg" className="" alt="" />
-
-                                    </SwiperSlide>
-                        </Swiper>
-            </div>
-        </section>
-
        
 
         </div>
@@ -219,4 +146,4 @@ function Content(){
     )
 }
 
-export default Content
+export default Slider
