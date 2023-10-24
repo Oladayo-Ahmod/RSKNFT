@@ -1,8 +1,27 @@
+"use client"
+
+import React, { useEffect } from 'react'
 import Image from "next/image"
+import { Swiper } from 'swiper/react'
+import 'swiper/css'
+import { SwiperSlide } from 'swiper/react'
+
+
 
 function Content(){
     return(
         <>
+        <Swiper
+            spaceBetween={50}
+            slidesPerView={1}
+            onSlideChange={(swiper)=> console.log('swiper change')}
+            onSwiper={(swiper)=> console.log('swiper set')}
+        >
+            <SwiperSlide>Slide 1</SwiperSlide>
+            <SwiperSlide>Slide 2</SwiperSlide>
+            <SwiperSlide>Slide 3</SwiperSlide>
+            <SwiperSlide>Slide 4</SwiperSlide>
+        </Swiper>
             <div className="no-bottom no-top" id="content">
         <div id="top"></div>
         <section id="section-hero" className="no-top no-bottom mt90 sm-mt-0" aria-label="section">
@@ -19,7 +38,8 @@ function Content(){
 
                         <div className="col-lg-6">
                             <div className="d-carousel">
-                                <div id="item-carousel-big-type-2" className="owl-carousel owl-center" data-wow-delay="1s">
+                                <div id="item-carousel-big-type-2" className="owl-carousel owl-center" >
+                                    <Swiper >
                                     <div className="nft_pic mod-b br-15">
                                         <a href="07_modern-collection.html">
                                             <span className="nft_pic_info">
@@ -98,6 +118,9 @@ function Content(){
                                             </div>
                                         </a>
                                     </div>
+
+                                    </Swiper>
+                                  
 
                                 </div>
                                 <div className="d-arrow-left mod-a"><i className="fa fa-angle-left"></i></div>
