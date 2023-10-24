@@ -2,6 +2,7 @@ import Image from "next/image"
 
 function TopSeller(){
     return (
+
         <section id="section-collections" className="no-top no-bottom">
         <div className="m-5 mt-0 mb-0 padding30 br-15 bg-custom">
             <div className="container">
@@ -17,7 +18,7 @@ function TopSeller(){
                             </ul>
                         </div>
                     </div>
-                    <div className="col-md-12 wow fadeIn">
+                    <div className="col-md-12 wow fadeIn " style={{'visibility':'visible'}}>
                         <ol className="author_list alt-2 d-col-3">
                             <li>
                                 <div className="author_list_pp">
