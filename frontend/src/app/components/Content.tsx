@@ -4,24 +4,16 @@ import React, { useEffect } from 'react'
 import Image from "next/image"
 import { Swiper } from 'swiper/react'
 import 'swiper/css'
+import 'swiper/css/bundle'
 import { SwiperSlide } from 'swiper/react'
+import { Navigation,Scrollbar,Autoplay } from 'swiper/modules'
 
 
 
 function Content(){
     return(
         <>
-        <Swiper
-            spaceBetween={50}
-            slidesPerView={1}
-            onSlideChange={(swiper)=> console.log('swiper change')}
-            onSwiper={(swiper)=> console.log('swiper set')}
-        >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-        </Swiper>
+       
             <div className="no-bottom no-top" id="content">
         <div id="top"></div>
         <section id="section-hero" className="no-top no-bottom mt90 sm-mt-0" aria-label="section">
@@ -38,10 +30,20 @@ function Content(){
 
                         <div className="col-lg-6">
                             <div className="d-carousel">
+                            <Swiper 
+                                        modules={[Navigation, Scrollbar,Autoplay]}
+                                        // spaceBetween={50}
+                                        navigation
+                                        // slidesPerView={3}
+                                        autoplay={{delay: 3000}}
+                                        onSlideChange={(swiper)=> console.log('swiper change')}
+                                        onSwiper={(swiper)=> console.log('swiper set')}
+                                    >
                                 <div id="item-carousel-big-type-2" className="owl-carousel owl-center" >
-                                    <Swiper >
-                                    <div className="nft_pic mod-b br-15">
-                                        <a href="07_modern-collection.html">
+                                   
+                                  <SwiperSlide >
+                                  <div className="nft_pic mod-b br-15">
+                                        <div>
                                             <span className="nft_pic_info">
                                                 <span className="nft_pic_title">Blue Nomad</span>
                                                 <span className="nft_pic_by">Mamie Barnett</span>
@@ -50,11 +52,14 @@ function Content(){
                                             <div className="nft_pic_wrap">
                                                 <Image src={"/carousel/crs-12.jpg"} className="lazy Image-fluid" width={546} height={546} alt="" />
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
+                                  </SwiperSlide>
 
-                                    <div className="nft_pic mod-b br-15">
-                                        <a href="07_modern-collection.html">
+                                   <SwiperSlide>
+
+                                   <div className="nft_pic mod-b br-15">
+                                        <div >
                                             <span className="nft_pic_info">
                                                 <span className="nft_pic_title">Cytotoxin</span>
                                                 <span className="nft_pic_by">Monica Lucas</span>
@@ -63,9 +68,11 @@ function Content(){
                                             <div className="nft_pic_wrap">
                                                 <Image src="/carousel/crs-13.jpg" width={546} height={546} className="lazy Image-fluid" alt="" />
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
+                                   </SwiperSlide>
 
+                                    <SwiperSlide>
                                     <div className="nft_pic mod-b br-15">
                                         <a href="07_modern-collection.html">
                                             <span className="nft_pic_info">
@@ -78,7 +85,9 @@ function Content(){
                                             </div>
                                         </a>
                                     </div>
+                                    </SwiperSlide>
 
+                                    <SwiperSlide>
                                     <div className="nft_pic mod-b br-15">
                                         <a href="07_modern-collection.html">
                                             <span className="nft_pic_info">
@@ -91,8 +100,10 @@ function Content(){
                                             </div>
                                         </a>
                                     </div>
+                                    </SwiperSlide>
+                                   
 
-
+{/* 
                                     <div className="nft_pic mod-b br-15">
                                         <a href="07_modern-collection.html">
                                             <span className="nft_pic_info">
@@ -104,8 +115,8 @@ function Content(){
                                                 <Image width={546} height={546} src="/carousel/crs-15.jpg" className="lazy Image-fluid" alt="" />
                                             </div>
                                         </a>
-                                    </div>
-
+                                    </div> */}
+{/* 
                                     <div className="nft_pic mod-b br-15">
                                         <a href="07_modern-collection.html">
                                             <span className="nft_pic_info">
@@ -117,12 +128,10 @@ function Content(){
                                                 <Image width={546} height={546} src="/carousel/crs-14.jpg" className="lazy Image-fluid" alt="" />
                                             </div>
                                         </a>
-                                    </div>
-
-                                    </Swiper>
-                                  
-
+                                    </div> */}                                  
                                 </div>
+                                </Swiper>
+
                                 <div className="d-arrow-left mod-a"><i className="fa fa-angle-left"></i></div>
                                 <div className="d-arrow-right mod-a"><i className="fa fa-angle-right"></i></div>
                             </div>
@@ -178,6 +187,28 @@ function Content(){
                     </div>
 
                 </div>
+            </div>
+
+            <div className="test">
+            <Swiper 
+                                        modules={[Navigation, Scrollbar]}
+                                        navigation
+                                        // spaceBetween={50}
+                                        // slidesPerView={3}
+                                        autoplay={{delay: 3000}}
+                                        onSlideChange={(swiper)=> console.log('swiper change')}
+                                        onSwiper={(swiper)=> console.log('swiper set')}
+                                    >
+
+                                    <SwiperSlide>
+                                    <Image src={"/carousel/crs-12.jpg"} className="" width={546} height={546} alt="" />
+
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                    <Image width={546} height={546} src="/carousel/crs-16.jpg" className="" alt="" />
+
+                                    </SwiperSlide>
+                        </Swiper>
             </div>
         </section>
 
