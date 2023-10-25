@@ -234,8 +234,9 @@ function TrendingNFT(){
                                     </div>
                                 </div>
                                 </SwiperSlide>
-                                {/* nft item begin */}
-                                <div className="d-item">
+                               <SwiperSlide>
+                                 {/* nft item begin */}
+                                 <div className="d-item">
                                     <div className="nft__item s2">
                                         <div className="author_list_pp">
                                             <a href="grey-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Franklin Greer">                                    
@@ -277,8 +278,11 @@ function TrendingNFT(){
                                         </div>
                                     </div>
                                 </div>
-                                {/* nft item begin */}
-                                <div className="d-item">
+                               </SwiperSlide>
+                               <SwiperSlide>
+
+                                 {/* nft item begin */}
+                                 <div className="d-item">
                                     <div className="nft__item s2">
                                         <div className="de_countdown" data-year="2023" data-month="11" data-day="6" data-hour="8"></div>
                                         <div className="author_list_pp">
@@ -321,6 +325,7 @@ function TrendingNFT(){
                                         </div>
                                     </div>
                                 </div>
+                               </SwiperSlide>
                             </div>
                             </Swiper>
                         </div>
