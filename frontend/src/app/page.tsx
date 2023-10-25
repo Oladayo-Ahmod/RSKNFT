@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Slider from './components/Slider'
 import Wallets from './components/Wallets'
 import TopSeller from './components/TopSellers'
+import TrendingNFT from './components/TrendingNFT'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Slider />
         <Wallets />
         <TopSeller />
+        <TrendingNFT />
         
       </main>
   )

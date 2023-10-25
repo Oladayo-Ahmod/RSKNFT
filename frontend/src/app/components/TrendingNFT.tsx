@@ -4,16 +4,33 @@ import Image from 'next/image'
 function TrendingNFT(){
     return (
         <>
+        <style>
+            {
+            `
+            .nft_item_wrap{
+                height: 224px !important;
+                background-size: cover !important;
+            }
+            .nft__item_preview{
+                display : block;
+            }
+            .d-item{
+                display : block;
+                background-size : cover;
+            }
+            `
+            }
+        </style>
             <section id="section-trending" className="pt40 no-bottom">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
                             <h2>Trending NFTs</h2>
-                            <div id="items-carousel-s2" className="owl-carousel wow fadeIn">
+                            <div id="items-carousel-s2" className="owl-carousel wow fadeIn" style={{'visibility':'visible'}}>
                                 {/* nft item begin */}
                                 <div className="d-item">
                                     <div className="nft__item s2">
-                                        <div className="de_countdown" data-year="2023" data-month="11" data-day="8" data-hour="8"></div>
+                                        {/* <div className="de_countdown" data-year="2023" data-month="11" data-day="8" data-hour="8"></div> */}
                                         <div className="author_list_pp">
                                             <a href="grey-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Gigaland">                                    
                                                 <Image className="lazy" src="/author/author-4.jpg" width={50} height={50} alt="" />
@@ -273,6 +290,9 @@ function TrendingNFT(){
                                 </div>
                             </div>
                         </div>
+
+
+                        
                     </div>
                 </div>
             </section>
