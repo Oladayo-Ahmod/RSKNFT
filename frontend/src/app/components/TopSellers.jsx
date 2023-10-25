@@ -1,9 +1,21 @@
+"use client"
+
 import Image from "next/image"
 
 function TopSeller(){
     return (
 
         <section id="section-collections" className="no-top no-bottom">
+            <style jsx>
+                {
+                `
+                .author_list_info a{
+                    text-decoration : none;
+                }
+                `
+                }
+            
+            </style>
         <div className="m-5 mt-0 mb-0 padding30 br-15 bg-custom">
             <div className="container">
                 <div className="row">
