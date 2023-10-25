@@ -16,7 +16,7 @@ function TrendingNFT(){
                                         <div className="de_countdown" data-year="2023" data-month="11" data-day="8" data-hour="8"></div>
                                         <div className="author_list_pp">
                                             <a href="grey-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Gigaland">                                    
-                                                <Image className="lazy" src="/author/author-4.jpg" alt="" />
+                                                <Image className="lazy" src="/author/author-4.jpg" width={50} height={50} alt="" />
                                                 <i className="fa fa-check"></i>
                                             </a>
                                         </div>
@@ -35,7 +35,7 @@ function TrendingNFT(){
                                             </div>
                                             <a href="07_modern-item-details.html">
                                                 <div className="d-placeholder"></div>
-                                                <Image src="/items/anim-10.webp" className="lazy nft__item_preview" alt="" />
+                                                <Image src="/items/anim-10.webp" className="lazy nft__item_preview" width={224} height={224} alt="" />
                                             </a>
                                         </div>
                                         <div className="nft__item_info">
@@ -59,7 +59,7 @@ function TrendingNFT(){
                                     <div className="nft__item s2">
                                         <div className="author_list_pp">
                                             <a href="grey-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Stacy Long">                                    
-                                                <Image className="lazy" src="/author/author-10.jpg" alt="" />
+                                                <Image className="lazy" src="/author/author-10.jpg" alt="" width={50} height={50} />
                                                 <i className="fa fa-check"></i>
                                             </a>
                                         </div>
@@ -78,7 +78,7 @@ function TrendingNFT(){
                                             </div>
                                             <a href="07_modern-item-details.html">
                                                 <div className="d-placeholder"></div>
-                                                <Image src="/items/static-22.jpg" className="lazy nft__item_preview" alt="" />
+                                                <Image src="/items/static-22.jpg" className="lazy nft__item_preview" alt="" width={224} height={224} />
                                             </a>
                                         </div>
                                         <div className="nft__item_info">
@@ -103,7 +103,7 @@ function TrendingNFT(){
                                         <div className="de_countdown" data-year="2023" data-month="11" data-day="12" data-hour="8"></div>
                                         <div className="author_list_pp">
                                             <a href="grey-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Ida Chapman">                                    
-                                                <Image className="lazy" src="/author/author-11.jpg" alt="" />
+                                                <Image className="lazy" src="/author/author-11.jpg" alt="" width={50} height={50} />
                                                 <i className="fa fa-check"></i>
                                             </a>
                                         </div>
@@ -122,7 +122,7 @@ function TrendingNFT(){
                                             </div>
                                             <a href="07_modern-item-details.html">
                                                 <div className="d-placeholder"></div>
-                                                <Image src="/items/static-23.jpg" className="lazy nft__item_preview" alt=""/>
+                                                <Image src="/items/static-23.jpg" className="lazy nft__item_preview" width={224} height={224} alt=""/>
                                             </a>
                                         </div>
                                         <div className="nft__item_info">
@@ -146,7 +146,7 @@ function TrendingNFT(){
                                     <div className="nft__item s2">
                                         <div className="author_list_pp">
                                             <a href="grey-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Fred Ryan">                                    
-                                                <Image className="lazy" src="/author/author-12.jpg" alt="" />
+                                                <Image className="lazy" src="/author/author-12.jpg" alt="" width={50} height={50} />
                                                 <i className="fa fa-check"></i>
                                             </a>
                                         </div>
@@ -165,7 +165,7 @@ function TrendingNFT(){
                                             </div>
                                             <a href="07_modern-item-details.html">
                                                 <div className="d-placeholder"></div>
-                                                <Image src="/items/static-24.jpg" className="lazy nft__item_preview" alt="" />
+                                                <Image src="/items/static-24.jpg" className="lazy nft__item_preview" width={224} height={224} alt="" />
                                             </a>
                                         </div>
                                         <div className="nft__item_info">
@@ -189,7 +189,7 @@ function TrendingNFT(){
                                     <div className="nft__item s2">
                                         <div className="author_list_pp">
                                             <a href="grey-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Franklin Greer">                                    
-                                                <Image className="lazy" src="/author/author-9.jpg" alt="" />
+                                                <Image className="lazy" src="/author/author-9.jpg" alt="" width={50} height={50}/>
                                                 <i className="fa fa-check"></i>
                                             </a>
                                         </div>
@@ -208,7 +208,7 @@ function TrendingNFT(){
                                             </div>
                                             <a href="07_modern-item-details.html">
                                                 <div className="d-placeholder"></div>
-                                                <Image src="/items/anim-9.webp" className="lazy nft__item_preview" alt="" />
+                                                <Image src="/items/anim-9.webp" className="lazy nft__item_preview" width={224} height={224} alt="" />
                                             </a>
                                         </div>
                                         <div className="nft__item_info">
@@ -233,7 +233,7 @@ function TrendingNFT(){
                                         <div className="de_countdown" data-year="2023" data-month="11" data-day="6" data-hour="8"></div>
                                         <div className="author_list_pp">
                                             <a href="grey-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Monica Lucas">                                    
-                                                <Image className="lazy" src="/author/author-1.jpg" alt="" />
+                                                <Image className="lazy" src="/author/author-1.jpg" alt="" width={50} height={50} />
                                                 <i className="fa fa-check"></i>
                                             </a>
                                         </div>
@@ -252,7 +252,7 @@ function TrendingNFT(){
                                             </div>
                                             <a href="07_modern-item-details.html">
                                                 <div className="d-placeholder"></div>
-                                                <Image src="/items/static-21.jpg" className="lazy nft__item_preview" alt="" />
+                                                <Image src="/items/static-21.jpg" className="lazy nft__item_preview" width={224} height={224} alt="" />
                                             </a>
                                         </div>
                                         <div className="nft__item_info">
