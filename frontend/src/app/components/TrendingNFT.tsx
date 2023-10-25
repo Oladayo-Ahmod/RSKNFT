@@ -22,6 +22,7 @@ function TrendingNFT(){
             }
             .d-item{
                 display : block;
+                width :280px !important;
                 background-size : cover;
             }
             .nft__item .s2{
@@ -326,6 +327,53 @@ function TrendingNFT(){
                                     </div>
                                 </div>
                                </SwiperSlide>
+                               <SwiperSlide>
+
+{/* nft item begin */}
+<div className="d-item">
+   <div className="nft__item s2">
+       <div className="de_countdown" data-year="2023" data-month="11" data-day="6" data-hour="8"></div>
+       <div className="author_list_pp">
+           <a href="grey-author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Monica Lucas">                                    
+               <Image className="lazy" src="/author/author-1.jpg" alt="" width={50} height={50} />
+               <i className="fa fa-check"></i>
+           </a>
+       </div>
+       <div className="nft__item_wrap">
+           <div className="nft__item_extra">
+               <div className="nft__item_buttons">
+                   <button data-bs-toggle="modal" data-bs-target="#buy_now">Buy Now</button>
+                   <button data-bs-toggle="modal" data-bs-target="#place_a_bid">Place a Bid</button>
+                   <div className="nft__item_share">
+                       <h4>Share</h4>
+                       <a href="https://www.facebook.com/sharer/sharer.php?u=https://madebydesignesia.com/themes" target="_blank"><i className="fa fa-facebook fa-lg"></i></a>
+                       <a href="https://twitter.com/intent/tweet?url=https://madebydesignesia.com/themes" target="_blank"><i className="fa fa-twitter fa-lg"></i></a>
+                       <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://madebydesignesia.com/themes"><i className="fa fa-envelope fa-lg"></i></a>
+                   </div>
+               </div>
+           </div>
+           <a href="07_modern-item-details.html">
+               <div className="d-placeholder"></div>
+               <Image src="/items/static-21.jpg" className="lazy nft__item_preview" width={224} height={224} alt="" />
+           </a>
+       </div>
+       <div className="nft__item_info">
+           <a href="07_modern-item-details.html">
+               <h4>Delectus Antiendotoxin</h4>
+           </a>
+           <div className="nft__item_click">
+               <span></span>
+           </div>
+           <div className="nft__item_price">
+               0.08 ETH<span>1/20</span>
+           </div>
+           <div className="nft__item_like">
+               <i className="fa fa-heart"></i><span>50</span>
+           </div>
+       </div>
+   </div>
+</div>
+</SwiperSlide>
                             </div>
                             </Swiper>
                         </div>
