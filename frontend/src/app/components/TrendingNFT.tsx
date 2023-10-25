@@ -7,16 +7,23 @@ function TrendingNFT(){
         <style>
             {
             `
-            .nft_item_wrap{
+            .nft__item_wrap{
                 height: 224px !important;
                 background-size: cover !important;
             }
-            .nft__item_preview{
+            
+            .nft__item img, .nft__item video{
                 display : block;
             }
             .d-item{
                 display : block;
                 background-size : cover;
+            }
+            .nft__item .s2{
+                width :300px;
+            }
+            a{
+                text-decoration : none;
             }
             `
             }
