@@ -1,6 +1,22 @@
+"use client"
+
+import { useContext, useEffect, useRef, useState } from 'react'
+import { MarketplaceContext } from "../../../contexts/Marketplace";
+import Link from 'next/link';
 import Image from "next/image"
 
+
+
 function Header(){
+
+    const {account,connectWallet} = useContext(MarketplaceContext)
+
+     // wallet connection
+     useEffect(()=>{
+        connectWallet()
+      },[])
+
+
     return (
         <header className="header-light scroll-light">
         <div className="container">
@@ -45,7 +61,9 @@ function Header(){
                                 </li>
                             </ul>
                             <div className="menu_side_area">
-                                <a href="07_modern-wallet.html" className="btn-main btn-wallet"><i className="icon_wallet_alt"></i><span>Connect Wallet</span></a>
+                                <button  onClick={connectWallet}  className="btn-main btn-wallet"><i className="icon_wallet_alt"></i><span>
+                                {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
+                                    </span></button>
                                 <span  id="switch_scheme">
                                     <i className="ss_dark fa fa-moon-o"></i>
                                     <i className="ss_light fa fa-sun-o"></i>
