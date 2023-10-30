@@ -5,7 +5,7 @@ function CreatePageContent(){
         <>
                <section aria-label="section">
                 <div className="container">
-                    <div className="row wow fadeIn">
+                    <div className="row">
                         <div className="col-lg-7 offset-lg-1">
                             <form id="form-create-item" className="form-border" method="post" action="email.php">
                                 <div className="field-set">
@@ -123,15 +123,15 @@ function CreatePageContent(){
                             <div className="nft__item">
                                 <div className="de_countdown" data-year="2023" data-month="11" data-day="16" data-hour="8"></div>
                                 <div className="author_list_pp">
-                                    <a href="#">                                    
-                                            <Image className="lazy" src="/author/author-1.jpg" alt="" />
+                                    {/* <a href="#">                                    
+                                            <Image className="lazy" src="/author-1.jpg" alt="" />
                                             <i className="fa fa-check"></i>
-                                        </a>
+                                        </a> */}
                                 </div>
                                 <div className="nft__item_wrap">
-                                    {/* <a href="#">
-                                            <Image src="images/collections/coll-item-3.jpg" id="get_file_2" className="lazy nft__item_preview" alt="" />
-                                        </a> */}
+                                    <a href="#">
+                                            <Image src="/collections/coll-item-3.jpg" width={280} height={280} id="get_file_2" className="lazy nft__item_preview" alt="" />
+                                        </a>
                                 </div>
                                 <div className="nft__item_info">
                                     <a href="#">
