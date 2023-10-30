@@ -41,33 +41,21 @@ function Header(){
                         <div className="de-flex-col header-col-mid">
                             {/* mainmenu begin */}
                             <ul id="mainmenu">
-                                <li>
-                                    <a href="index.html">Home<span></span></a>
-                                </li>
-                                <li>
-                                    <a href="explore.html">Explore<span></span></a>
-                                    
-                                </li>
-                                <li>
-                                    <a href="#">Pages<span></span></a>
-                                 
-                                </li>
-                                <li>
-                                    <a href="#">Stats<span></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Elements<span></span></a>
-                                   
-                                </li>
+                            <li>
+                                    <Link href='/'>Home<span></span></Link>
+                                    </li>
+                                    <li>
+                                        <Link href={'/create'}>Create<span></span></Link>
+                                    </li>
+                                    <li>
+                                    <Link href={'/nfts'}>My NFTs<span></span></Link>
+                                    </li>
                             </ul>
                             <div className="menu_side_area">
                                 <button  onClick={connectWallet}  className="btn-main btn-wallet"><i className="icon_wallet_alt"></i><span>
                                 {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
                                     </span></button>
-                                <span  id="switch_scheme">
-                                    <i className="ss_dark fa fa-moon-o"></i>
-                                    <i className="ss_light fa fa-sun-o"></i>
-                                </span>
+                          
                                 <span id="menu-btn"></span>
                             </div>
                         </div>

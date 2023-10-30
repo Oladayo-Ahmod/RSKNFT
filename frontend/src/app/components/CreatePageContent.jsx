@@ -1,6 +1,11 @@
-import Image from "next/image"
+"use client"
+
+import { useContext, useEffect, useRef, useState } from 'react'
+import { MarketplaceContext } from "../../../contexts/Marketplace";
 
 function CreatePageContent(){
+
+    const {disability,setFormData,formData,CreateNft,message,imageHandler} = useContext(MarketplaceContext)
     return(
         <>
                <section aria-label="section">
@@ -13,8 +18,7 @@ function CreatePageContent(){
 
                                     <div className="d-create-file">
                                         <p id="file_name">PNG, JPG, GIF, WEBP or MP4. Max 200mb.</p>
-                                        <input type="button" id="get_file" className="btn-main" value="Browse" />
-                                        <input type="file" id="upload_file" />
+                                        <input type="file" id="get_file"  onChange={e=>imageHandler(e)} className="btn-main" value="Browse" />
                                     </div>
 
                                     <div className="spacer-40"></div>
@@ -26,21 +30,18 @@ function CreatePageContent(){
                                     <div className="spacer-20"></div>
 
                                     <h5>Title</h5>
-                                    <input type="text" name="item_title" id="item_title" className="form-control" placeholder="e.g. 'Crypto Funk" />
+                                    <input type="text" name="item_title" id="item_title" className="form-control" onChange={e => setFormData({...formData, name : e.target.value  })}  placeholder="e.g. 'Crypto Funk" />
 
                                     <div className="spacer-20"></div>
 
-                                    <h5>Description</h5>
-                                    <textarea data-autoresize name="item_desc" id="item_desc" className="form-control" placeholder="e.g. 'This is very limited item'"></textarea>
+                                    <h5>Price</h5>
+                                    <input type='number' name="item_desc" id="item_desc" className="form-control" onChange={e => setFormData({...formData, price : e.target.value  })} placeholder="e.g. '1 RBTC'" />
 
                                     <div className="spacer-20"></div>
-
-                                    <h5>Royalties</h5>
-                                    <input type="text" name="item_royalties" id="item_royalties" className="form-control" placeholder="suggested: 0, 10%, 20%, 30%. Maximum is 70%" />
 
                                     <div className="spacer-single"></div>
 
-                                    <input type="button" id="submit" className="btn-main" value="Create Item" />
+                                    <button type="button" id="submit" className="btn-main" value="Create Item"  onClick={CreateNft} >{message} </button>
                                     <div className="spacer-single"></div>
                                 </div>
                             </form>

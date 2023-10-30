@@ -33,7 +33,7 @@ function CreatePageHeader(){
                                         <Link href={'/create'}>Create<span></span></Link>
                                     </li>
                                     <li>
-                                    <Link href={'/create'}>My NFTs<span></span></Link>
+                                    <Link href={'/nfts'}>My NFTs<span></span></Link>
                                     </li>
                                     {/* <li>
                                         <a href="#">Elements<span></span></a>
@@ -43,11 +43,7 @@ function CreatePageHeader(){
                                 <div className="menu_side_area">
                                     <div className="de-login-menu">
                                         <a href="create-options.html" className="btn-main"><i className="fa fa-plus"></i><span>Create</span></a>
-
-                                        <span id="de-click-menu-notification" className="de-menu-notification">
-                                            <span className="d-count">8</span>
-                                        <i className="fa fa-bell"></i>
-                                        </span>
+                                        
                                         <span id="menu-btn"></span>
                                     </div>
                                 </div>
