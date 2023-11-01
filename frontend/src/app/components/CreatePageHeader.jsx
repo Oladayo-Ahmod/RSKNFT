@@ -3,8 +3,13 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { useContext, useEffect, useRef, useState } from 'react'
+import { MarketplaceContext } from "../../../contexts/Marketplace";
+
 
 function CreatePageHeader(){
+    const {account,connectWallet} = useContext(MarketplaceContext)
+
     return(
     //    <div>
             <header className="transparent">
@@ -20,9 +25,7 @@ function CreatePageHeader(){
                                         </a>
                                     </div>
                                 </div>
-                                <div className="de-flex-col">
-                                    <input id="quick_search" className="xs-hide" name="quick_search" placeholder="search item here..." type="text" />
-                                </div>
+                           
                             </div>
                             <div className="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
@@ -42,8 +45,9 @@ function CreatePageHeader(){
                                 </ul>
                                 <div className="menu_side_area">
                                     <div className="de-login-menu">
-                                        <a href="create-options.html" className="btn-main"><i className="fa fa-plus"></i><span>Create</span></a>
-                                        
+                                    <button  onClick={connectWallet}  className="btn-main btn-wallet"><i className="icon_wallet_alt"></i><span>
+                                {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
+                                    </span></button>                                        
                                         <span id="menu-btn"></span>
                                     </div>
                                 </div>
