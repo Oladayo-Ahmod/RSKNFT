@@ -5,7 +5,7 @@ import { MarketplaceContext } from "../../../contexts/Marketplace";
 
 function CreatePageContent(){
 
-    const {disability,setFormData,formData,CreateNft,message,imageHandler} = useContext(MarketplaceContext)
+    const {disability,setFormData,formData,CreateNft,message,imageHandler,handleMethod} = useContext(MarketplaceContext)
     return(
         <>
                <section aria-label="section">
@@ -26,9 +26,9 @@ function CreatePageContent(){
                                     <h5>Select method</h5>
                                     <div className="de_tab tab_methods">
                                         <ul className="de_nav">
-                                            <li className="active"><span><i className="fa fa-tag"></i>Fixed price</span>
+                                            <li onClick={()=>handleMethod('fixed')} className="active"><span><i className="fa fa-tag"></i>Fixed price</span>
                                             </li>
-                                            <li><span><i className="fa fa-hourglass-1"></i>Timed auction</span>
+                                            <li onClick={()=>handleMethod('timed')}><span><i className="fa fa-hourglass-1"></i>Timed auction</span>
                                             </li>
                                           
                                         </ul>

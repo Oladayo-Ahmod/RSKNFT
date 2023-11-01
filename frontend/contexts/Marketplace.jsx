@@ -259,6 +259,18 @@ const allListedNfts=async()=>{
     }
 }
 
+    const handleMethod = async function(method){
+        try {
+            if(method == 'fixed'){
+                console.log('it is fixed')
+            }
+            else if(method == 'timed'){
+                console.log('it is timed')
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 return (
     <MarketplaceContext.Provider
@@ -278,7 +290,8 @@ return (
                 buttonDisability,
                 imageHandler,
                 setFormData,
-                formData
+                formData,
+                handleMethod
             }
         }
     >
