@@ -10,6 +10,16 @@ function CreatePageContent(){
 
     return(
         <>
+        <style jsx>
+        {
+        `
+            .span-border-color{
+                border-color : #03DAC6 !important;
+            }
+        `
+        }
+
+        </style>
                <section aria-label="section">
                 <div className="container">
                     <div className="row">

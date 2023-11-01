@@ -263,7 +263,6 @@ const allListedNfts=async()=>{
         try {
             if(method == 'fixed'){
                 const modalElement = timedRef.current ? timedRef.current : ''
-                modalElement.style.display = 'none'
                 modalElement.classList.add('d-none')
 
 
@@ -271,7 +270,6 @@ const allListedNfts=async()=>{
             else if(method == 'timed'){
                 const modalElement = timedRef.current ? timedRef.current : ''
                 modalElement.classList.remove('d-none')
-                // modalElement.style.display = 'block'
             }
         } catch (error) {
             console.log(error);
