@@ -2,6 +2,7 @@
 
 import { useContext, useEffect, useRef, useState } from 'react'
 import { MarketplaceContext } from "../../../contexts/Marketplace";
+import Image from 'next/image';
 
 function CreatePageContent(){
 
@@ -91,6 +92,38 @@ function CreatePageContent(){
                             </form>
                         </div>
 
+                        <div className="col-lg-3 col-sm-6 col-xs-12">
+                            <h5>Preview item</h5>
+                            <div className="nft__item">
+                                <div className="de_countdown" data-year="2023" data-month="11" data-day="16" data-hour="8"></div>
+                                <div className="nft__item_wrap">
+                                    <a href="#">
+                                            <Image
+                                             src="/collections/coll-item-3.jpg" 
+                                             id="get_file_2" 
+                                             width={280} height={280}
+                                             className=" d-block lazy nft__item_preview" alt="" />
+                                        </a>
+                                </div>
+                                <div className="nft__item_info">
+                                    <a href="#">
+                                        <h4>Pinky Ocean</h4>
+                                    </a>
+                                    <div className="nft__item_click">
+                                        <span></span>
+                                    </div>
+                                    <div className="nft__item_price">
+                                        0.08 ETH<span>1/20</span>
+                                    </div>
+                                    <div className="nft__item_action">
+                                        <a href="#">Place a bid</a>
+                                    </div>
+                                    <div className="nft__item_like">
+                                        <i className="fa fa-heart"></i><span>50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                        
                     </div>
                 </div>
