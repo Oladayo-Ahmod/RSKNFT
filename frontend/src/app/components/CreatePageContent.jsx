@@ -23,10 +23,42 @@ function CreatePageContent(){
 
                                     <div className="spacer-40"></div>
 
+                                    <h5>Select method</h5>
+                                    <div className="de_tab tab_methods">
+                                        <ul className="de_nav">
+                                            <li className="active"><span><i className="fa fa-tag"></i>Fixed price</span>
+                                            </li>
+                                            <li><span><i className="fa fa-hourglass-1"></i>Timed auction</span>
+                                            </li>
+                                          
+                                        </ul>
 
-                                    <div className="spacer-20"></div>
+                                        <div className="de_tab_content">
+                                            <div id="tab_opt_2" className='d-none'>
+                                                <h5>Minimum bid</h5>
+                                                <input type="text" name="item_price_bid" id="item_price_bid" className="form-control" placeholder="enter minimum bid" />
 
-                                  
+                                                <div className="spacer-20"></div>
+
+                                                <div className="row">
+                                                    <div className="col-md-6">
+                                                        <h5>Starting date</h5>
+                                                        <input type="date" name="bid_starting_date" id="bid_starting_date" className="form-control" min="1997-01-01" />
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                        <h5>Expiration date</h5>
+                                                        <input type="date" name="bid_expiration_date" id="bid_expiration_date" className="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="tab_opt_3">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
                                     <div className="spacer-20"></div>
 
                                     <h5>Title</h5>
