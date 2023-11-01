@@ -6,6 +6,7 @@ import { MarketplaceContext } from "../../../contexts/Marketplace";
 function CreatePageContent(){
 
     const timedRef = useRef(null)
+    const listRef = useRef(null)
     const {disability,setFormData,formData,CreateNft,message,imageHandler,handleMethod} = useContext(MarketplaceContext)
 
     return(
@@ -38,9 +39,9 @@ function CreatePageContent(){
                                     <h5>Select method</h5>
                                     <div className="de_tab tab_methods">
                                         <ul className="de_nav">
-                                            <li onClick={()=>handleMethod('fixed',timedRef)} className="active"><span><i className="fa fa-tag"></i>Fixed price</span>
+                                            <li onClick={()=>handleMethod('fixed',timedRef,listRef)} ><span className='span-border-color'  useRef={listRef}><i className="fa fa-tag" ></i>Fixed price</span>
                                             </li>
-                                            <li onClick={()=>handleMethod('timed',timedRef)}><span><i className="fa fa-hourglass-1"></i>Timed auction</span>
+                                            <li onClick={()=>handleMethod('timed',timedRef,listRef)}><span  useRef={listRef}><i className="fa fa-hourglass-1"></i>Timed auction</span>
                                             </li>
                                           
                                         </ul>
