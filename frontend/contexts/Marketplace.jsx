@@ -259,13 +259,19 @@ const allListedNfts=async()=>{
     }
 }
 
-    const handleMethod = async function(method){
+    const handleMethod = async function(method,timedRef){
         try {
             if(method == 'fixed'){
-                console.log('it is fixed')
+                const modalElement = timedRef.current ? timedRef.current : ''
+                modalElement.style.display = 'none'
+                modalElement.classList.add('d-none')
+
+
             }
             else if(method == 'timed'){
-                console.log('it is timed')
+                const modalElement = timedRef.current ? timedRef.current : ''
+                modalElement.classList.remove('d-none')
+                // modalElement.style.display = 'block'
             }
         } catch (error) {
             console.log(error);

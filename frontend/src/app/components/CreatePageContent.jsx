@@ -5,7 +5,9 @@ import { MarketplaceContext } from "../../../contexts/Marketplace";
 
 function CreatePageContent(){
 
+    const timedRef = useRef(null)
     const {disability,setFormData,formData,CreateNft,message,imageHandler,handleMethod} = useContext(MarketplaceContext)
+
     return(
         <>
                <section aria-label="section">
@@ -26,15 +28,15 @@ function CreatePageContent(){
                                     <h5>Select method</h5>
                                     <div className="de_tab tab_methods">
                                         <ul className="de_nav">
-                                            <li onClick={()=>handleMethod('fixed')} className="active"><span><i className="fa fa-tag"></i>Fixed price</span>
+                                            <li onClick={()=>handleMethod('fixed',timedRef)} className="active"><span><i className="fa fa-tag"></i>Fixed price</span>
                                             </li>
-                                            <li onClick={()=>handleMethod('timed')}><span><i className="fa fa-hourglass-1"></i>Timed auction</span>
+                                            <li onClick={()=>handleMethod('timed',timedRef)}><span><i className="fa fa-hourglass-1"></i>Timed auction</span>
                                             </li>
                                           
                                         </ul>
 
-                                        <div className="de_tab_content">
-                                            <div id="tab_opt_2" className='d-none'>
+                                        <div className="de_tab_content" >
+                                            <div id="tab_opt_2" className='d-none' ref={timedRef}>
                                                 <h5>Minimum bid</h5>
                                                 <input type="text" name="item_price_bid" id="item_price_bid" className="form-control" placeholder="enter minimum bid" />
 
