@@ -259,13 +259,12 @@ const allListedNfts=async()=>{
     }
 }
 
-    const handleMethod = async function(method,timedRef,listRef){
+    const handleMethod = async function(method,timedRef){
         try {
             if(method == 'fixed'){
                 const modalElement = timedRef.current ? timedRef.current : ''
-                const listElement = listRef.current ? listRef.current : ''
                 modalElement.classList.add('d-none')
-                listElement.classList.remove('span-border-color')
+                // listElement.classList.remove('span-border-color')
                 
 
 

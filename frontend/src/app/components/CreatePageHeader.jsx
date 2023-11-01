@@ -21,7 +21,7 @@ function CreatePageHeader(){
                                 <div className="de-flex-col">
                                     <div id="logo">
                                         <a href="index.html">
-                                            <Image alt="" src="/logo-1.png" width={35} height={35} />
+                                            <Image alt="" src="/logo-7.png" width={35} height={35} />
                                         </a>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@ function CreatePageHeader(){
                                 <div className="menu_side_area">
                                     <div className="de-login-menu">
                                     <button  onClick={connectWallet}  className="btn-main btn-wallet"><i className="icon_wallet_alt"></i><span>
-                                {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
+                                    {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
                                     </span></button>                                        
                                         <span id="menu-btn"></span>
                                     </div>

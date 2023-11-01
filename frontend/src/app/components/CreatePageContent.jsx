@@ -6,7 +6,6 @@ import { MarketplaceContext } from "../../../contexts/Marketplace";
 function CreatePageContent(){
 
     const timedRef = useRef(null)
-    const listRef = useRef(null)
     const {disability,setFormData,formData,CreateNft,message,imageHandler,handleMethod} = useContext(MarketplaceContext)
 
     return(
@@ -31,7 +30,7 @@ function CreatePageContent(){
 
                                     <div className="d-create-file">
                                         <p id="file_name">PNG, JPG, GIF, WEBP or MP4. Max 200mb.</p>
-                                        <input type="file" id="get_file"  onChange={e=>imageHandler(e)} className="btn-main" value="Browse" />
+                                        <input type="file" id="get_file"  onChange={e=>imageHandler(e)} className="btn-main"  />
                                     </div>
 
                                     <div className="spacer-40"></div>
@@ -39,9 +38,9 @@ function CreatePageContent(){
                                     <h5>Select method</h5>
                                     <div className="de_tab tab_methods">
                                         <ul className="de_nav">
-                                            <li onClick={()=>handleMethod('fixed',timedRef,listRef)} ><span className='span-border-color'  useRef={listRef}><i className="fa fa-tag" ></i>Fixed price</span>
+                                            <li onClick={()=>handleMethod('fixed',timedRef)} ><span className='span-border-color'  ><i className="fa fa-tag" ></i>Fixed price</span>
                                             </li>
-                                            <li onClick={()=>handleMethod('timed',timedRef,listRef)}><span  useRef={listRef}><i className="fa fa-hourglass-1"></i>Timed auction</span>
+                                            <li onClick={()=>handleMethod('timed',timedRef)}><span  ><i className="fa fa-hourglass-1"></i>Timed auction</span>
                                             </li>
                                           
                                         </ul>
