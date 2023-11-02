@@ -31,6 +31,7 @@ const MarketplaceProvider = ({ children }) => {
     const [message, setMessage] = useState('List Item')
     const [userNftData, setUserNftData] = useState('')
     const [formData, setFormData] = useState({ name: '', price: '', file: '' })
+    const [imagePreview, setImagePreview] = useState(false)
 
 
     /**
@@ -229,9 +230,10 @@ const allListedNfts=async()=>{
  const imageHandler = async function(e){
     let file = e.target.files[0]
     try {
-        const response = await uploadFileToIPFS(file)
-        console.log(response);
+        // const response = await uploadFileToIPFS(file)
+        // console.log(response);
         setNftUrl(response)
+        setImagePreview(file)
     } catch (error) {
         console.log(error);
     }
@@ -297,7 +299,8 @@ return (
                 imageHandler,
                 setFormData,
                 formData,
-                handleMethod
+                handleMethod,
+                imagePreview
             }
         }
     >
