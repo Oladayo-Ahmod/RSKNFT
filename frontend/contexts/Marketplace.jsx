@@ -232,7 +232,7 @@ const allListedNfts=async()=>{
     try {
         // const response = await uploadFileToIPFS(file)
         // console.log(response);
-        setNftUrl(response)
+        // setNftUrl(response)
         setImagePreview(file)
     } catch (error) {
         console.log(error);
