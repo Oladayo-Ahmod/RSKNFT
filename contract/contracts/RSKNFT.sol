@@ -318,6 +318,12 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
             listings[id].endAt > block.timestamp;
     }
 
+    /// @dev check if auction is expired
+    /// @param id , auction id
+    function isAuctionExpired(uint256 id) public view returns (bool) {
+        return listings[id].endAt <= block.timestamp;
+    }
+
     function _transferFund(address payable to, uint256 amount) internal {
         if (amount == 0) {
             return;
