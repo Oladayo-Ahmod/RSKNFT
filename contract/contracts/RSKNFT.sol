@@ -87,6 +87,14 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
         string message
     );
 
+    /// @dev withdraw bid event
+    /// @param listingId, @param bidder, @param bid, @param message
+    event WithdrawBid(
+        uint256 listingId, 
+        address indexed bidder, 
+        uint256 bid,
+        string message
+    );
 
      constructor() ERC721("CeloNFT", "ASG"){
         owner = payable(msg.sender);
@@ -233,7 +241,22 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
             );
     }
 
-    
+    function withdrawBid(uint256 listingId) public payable nonReentrant {
+        require(isAuctionExpired(listingId), 'auction must be ended');
+        require(highestBidder[listingId] != msg.sender, 'highest bidder cannot withdraw bid');
+
+        uint256 balance = bids[listingId][msg.sender];
+        bids[listingId][msg.sender] = 0;
+        _transferFund(payable(msg.sender), balance);
+
+        emit WithdrawBid(
+            listingId, 
+            msg.sender, 
+            balance,
+            "Withdraw bid successfully"
+            );
+
+    }    
 
      /// @dev NFT sales functionality and process payment to seller
     /// @param tokenId,  NFT token id
