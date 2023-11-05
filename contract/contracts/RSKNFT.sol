@@ -69,20 +69,22 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
     );
 
     /// @dev Auction completed event
-    /// @param listingId, @param seller ,  @param bidder, @param bid
+    /// @param listingId, @param seller ,  @param bidder, @param bid, @param message
     event AuctionCompleted(
         uint256 listingId,
         address indexed seller, 
         address indexed bidder, 
-        uint256 bid
+        uint256 bid,
+        string message
     );
 
     /// @dev bidding event
-    /// @param listingId, @param bidder, @param bid
+    /// @param listingId, @param bidder, @param bid, @param message
     event BidCreated(
         uint256 listingId, 
         address indexed bidder, 
-        uint256 bid
+        uint256 bid,
+        string message
     );
 
 
@@ -202,7 +204,8 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
             listingId,
             listing.seller, 
             winner, 
-            bids[listingId][winner]
+            bids[listingId][winner],
+            "Auction completed successfully"
             );
     }
 
@@ -220,7 +223,12 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
         uint256 incentive = listing.price / minAuctionIncrement;
         listing.price = listing.price + incentive;
 
-        emit BidCreated(listingId, msg.sender, newBid);
+        emit BidCreated(
+            listingId, 
+            msg.sender, 
+            newBid,
+            "Bid created successfully"
+            );
     }
 
      /// @dev NFT sales functionality and process payment to seller
