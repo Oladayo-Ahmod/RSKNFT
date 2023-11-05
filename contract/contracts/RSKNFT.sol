@@ -227,5 +227,12 @@ contract RSKNFT is ERC721URIStorage {
         return NFT_ID[tokenId].price;
     }
 
+    /// @dev check if auction is open
+    function isAuctionOpen(uint256 id) public view returns (bool) {
+        return
+            listings[id].status == OPEN_STATUS &&
+            listings[id].endAt > block.timestamp;
+    }
+
     
 }
