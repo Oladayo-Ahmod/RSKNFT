@@ -45,14 +45,24 @@ contract RSKNFT is ERC721URIStorage {
       /// @notice NFT event action
       /// @dev handled all events related to nfts in the contract
       /// @param tokenId, @param owner, @param seller, @param price, @param sold
-        event NFT_Action(
-            uint256 tokenId,
-            address owner,
-            address seller,
-            uint256 price,
-            bool sold,
-            string message
-        );
+    event NFT_Action(
+        uint256 tokenId,
+        address owner,
+        address seller,
+        uint256 price,
+        bool sold,
+        string message
+    );
+
+    event AuctionCreated(
+        uint256 listingId, 
+        address indexed seller, 
+        uint256 price, 
+        uint256 tokenId, 
+        uint256 startAt, 
+        uint256 endAt,
+        string message    
+    );
 
 
      constructor() ERC721("CeloNFT", "ASG"){
@@ -62,7 +72,19 @@ contract RSKNFT is ERC721URIStorage {
       /// @dev mint token , set tokenURI and return currentTokenId
      /// @param _tokenURI, a tokenURI obtained from IPFS
      /// @return currentTokenId, current token id
-    function createToken(string memory _tokenURI, uint256 price) external returns(uint256) {
+    function mintToken(string memory _tokenURI, uint256 price) external returns(uint256) {
+        _tokenId.increment(); // increment tokenId
+        uint256 currentTokenId = _tokenId.current(); // get current tokenId
+        _mint(msg.sender,currentTokenId); // mint token
+        _setTokenURI(currentTokenId,_tokenURI); // set token uri from IPFS
+         createNFT(currentTokenId,price);
+        return currentTokenId;
+    }
+
+     /// @dev mint token , set tokenURI and return currentTokenId
+     /// @param _tokenURI, a tokenURI obtained from IPFS
+     /// @return currentTokenId, current token id
+    function mintAuctionToken(string memory _tokenURI, uint256 price) external returns(uint256) {
         _tokenId.increment(); // increment tokenId
         uint256 currentTokenId = _tokenId.current(); // get current tokenId
         _mint(msg.sender,currentTokenId); // mint token
@@ -94,8 +116,10 @@ contract RSKNFT is ERC721URIStorage {
 
     }
 
+
      function createAuctionListing (uint256 price, uint256 tokenId, uint256 durationInSeconds) public returns (uint256) {
         listingCounter++;
+                
         uint256 listingId = listingCounter;
 
         uint256 startAt = block.timestamp;
@@ -113,7 +137,15 @@ contract RSKNFT is ERC721URIStorage {
 
         _transfer(msg.sender, address(this), tokenId);
 
-        emit AuctionCreated(listingId, msg.sender, price, tokenId, startAt, endAt);
+        emit AuctionCreated(
+            listingId, 
+            msg.sender, 
+            price, 
+            tokenId, 
+            startAt, 
+            endAt,
+            "Auction created successfully"
+            );
 
         return listingId;
     }
