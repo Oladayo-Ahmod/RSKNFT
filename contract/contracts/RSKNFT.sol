@@ -117,6 +117,9 @@ contract RSKNFT is ERC721URIStorage {
     }
 
 
+        /// @dev create auction listing
+        /// @param price, @param tokenId, @param durationInSeconds
+        /// @return listingId
      function createAuctionListing (uint256 price, uint256 tokenId, uint256 durationInSeconds) public returns (uint256) {
         uint256 currentTokenId = _tokenId.current();
         uint256 listingId = currentTokenId;
@@ -148,8 +151,6 @@ contract RSKNFT is ERC721URIStorage {
 
         return listingId;
     }
-
-
 
      /// @dev NFT sales functionality and process payment to seller
     /// @param tokenId,  NFT token id
