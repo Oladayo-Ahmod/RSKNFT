@@ -324,6 +324,8 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
         return listings[id].endAt <= block.timestamp;
     }
 
+    /// @dev fund transfer
+    /// @param to, @param amount
     function _transferFund(address payable to, uint256 amount) internal {
         if (amount == 0) {
             return;
