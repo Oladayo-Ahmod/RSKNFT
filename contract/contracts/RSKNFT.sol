@@ -11,7 +11,12 @@ contract RSKNFT is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenId; // tokenId
     Counters.Counter  private _soldItems; // total items
+    uint8 public constant OPEN_STATUS = 1; // open status
+    uint8 public constant COMPLETED_STATUS = 2; // close status
+    uint256 public minAuctionIncrement = 10; // 10 percent
     address payable owner;
+
+
     mapping (uint256 => NFT) NFT_ID;
 
     // nft struct
@@ -23,17 +28,28 @@ contract RSKNFT is ERC721URIStorage {
         uint256 tokenId;
     }
 
+    struct Listing {
+        address seller;
+        address owner;
+        uint256 tokenId;
+        uint256 price; // display price
+        uint256 netPrice; // actual price
+        uint256 startAt;
+        uint256 endAt; 
+        uint8 status;
+    }
+
       /// @notice NFT event action
       /// @dev handled all events related to nfts in the contract
       /// @param tokenId, @param owner, @param seller, @param price, @param sold
-    event NFT_Action(
-        uint256 tokenId,
-        address owner,
-        address seller,
-        uint256 price,
-        bool sold,
-        string message
-    );
+        event NFT_Action(
+            uint256 tokenId,
+            address owner,
+            address seller,
+            uint256 price,
+            bool sold,
+            string message
+        );
 
 
      constructor() ERC721("CeloNFT", "ASG"){
