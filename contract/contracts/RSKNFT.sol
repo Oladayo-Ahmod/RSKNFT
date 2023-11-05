@@ -166,6 +166,8 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
         return listingId;
     }
 
+    /// @dev Nft auction completion functionality
+    /// @param listingId , listingId
     function completeAuction(uint256 listingId) public payable nonReentrant {
         require(!isAuctionOpen(listingId), 'auction is still open');
 
