@@ -228,6 +228,7 @@ contract RSKNFT is ERC721URIStorage {
     }
 
     /// @dev check if auction is open
+    /// @param id
     function isAuctionOpen(uint256 id) public view returns (bool) {
         return
             listings[id].status == OPEN_STATUS &&
