@@ -4,8 +4,10 @@ pragma solidity 0.8.19;
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
 
-contract RSKNFT is ERC721URIStorage {
+
+contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
 
      /// @notice implement the Counter libarary for counting tokenId
     using Counters for Counters.Counter;
@@ -152,6 +154,32 @@ contract RSKNFT is ERC721URIStorage {
         return listingId;
     }
 
+    function completeAuction(uint256 listingId) public payable nonReentrant {
+        require(!isAuctionOpen(listingId), 'auction is still open');
+
+        Listing storage listing = listings[listingId];
+        address winner = highestBidder[listingId]; 
+        require(
+            msg.sender == listing.seller || msg.sender == winner, 
+            'only seller or winner can complete auction'
+        );
+
+        if(winner != address(0)) {
+           _transfer(address(this), winner, listing.tokenId);
+
+            uint256 amount = bids[listingId][winner]; 
+            bids[listingId][winner] = 0;
+            _transferFund(payable(listing.seller), amount);
+
+        } else {
+            _transfer(address(this), listing.seller, listing.tokenId);
+        }
+
+        listing.status = STATUS_DONE;
+
+        emit AuctionCompleted(listingId, listing.seller, winner, bids[listingId][winner]);
+    }
+
      /// @dev NFT sales functionality and process payment to seller
     /// @param tokenId,  NFT token id
     function sellNFT(uint256 tokenId) external payable {
@@ -228,12 +256,23 @@ contract RSKNFT is ERC721URIStorage {
     }
 
     /// @dev check if auction is open
-    /// @param id
+    /// @param id , auction id
     function isAuctionOpen(uint256 id) public view returns (bool) {
         return
             listings[id].status == OPEN_STATUS &&
             listings[id].endAt > block.timestamp;
     }
+
+    function _transferFund(address payable to, uint256 amount) internal {
+        if (amount == 0) {
+            return;
+        }
+        require(to != address(0), 'Error, cannot transfer to address(0)');
+
+        (bool transferSent, ) = to.call{value: amount}("");
+        require(transferSent, "Error, failed to send Ether");
+    }
+
 
     
 }
