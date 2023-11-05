@@ -77,6 +77,13 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
         uint256 bid
     );
 
+    /// @dev bidding event
+    /// @param listingId, @param bidder, @param bid
+    event BidCreated(
+        uint256 listingId, 
+        address indexed bidder, 
+        uint256 bid
+    );
 
 
      constructor() ERC721("CeloNFT", "ASG"){
@@ -197,6 +204,23 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
             winner, 
             bids[listingId][winner]
             );
+    }
+
+    function bid(uint256 listingId) public payable nonReentrant {
+        require(isAuctionOpen(listingId), 'auction has ended');
+        Listing storage listing = listings[listingId];
+        require(msg.sender != listing.seller, "cannot bid on what you own");
+
+        uint256 newBid = bids[listingId][msg.sender] + msg.value;
+        require(newBid >= listing.price, "cannot bid below the latest bidding price");
+
+        bids[listingId][msg.sender] += msg.value;
+        highestBidder[listingId] = msg.sender;
+
+        uint256 incentive = listing.price / minAuctionIncrement;
+        listing.price = listing.price + incentive;
+
+        emit BidCreated(listingId, msg.sender, newBid);
     }
 
      /// @dev NFT sales functionality and process payment to seller
