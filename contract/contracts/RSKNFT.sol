@@ -124,11 +124,12 @@ contract RSKNFT is ERC721URIStorage {
         uint256 endAt = startAt + durationInSeconds;
 
         listings[listingId] = Listing({
-            seller: msg.sender,
+            seller: payable(msg.sender),
+            owner : payable(address(this)),
             tokenId: tokenId,
             price: price,
             netPrice: price,
-            status: STATUS_OPEN,
+            status: OPEN_STATUS,
             startAt: startAt,
             endAt: endAt
         });
