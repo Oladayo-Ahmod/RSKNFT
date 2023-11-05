@@ -72,6 +72,19 @@ describe('RSKNFT', ()=>{
                 expect(error.message).to.include('cannot bid below the latest bidding price')
             }
         })
+
+        it("owner cannot bid ", async ()=>{
+            let [,bidder] = await ethers.getSigners()
+            const price = ethers.utils.parseEther('2')
+            const tx = await contract.mintAuctionToken("https://test-url",price,3600)
+            await tx.wait()
+            try {
+                await contract.bid(1, {value : price})
+            } catch (error) {
+                console.log(error.message);
+            }
+            
+        })
     })
 
      // NFT sales
