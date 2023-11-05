@@ -102,6 +102,7 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
 
       /// @dev mint token , set tokenURI and return currentTokenId
      /// @param _tokenURI, a tokenURI obtained from IPFS
+     /// @param price , nft price
      /// @return currentTokenId, current token id
     function mintToken(string memory _tokenURI, uint256 price) external returns(uint256) {
         _tokenId.increment(); // increment tokenId
@@ -114,6 +115,8 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
 
      /// @dev mint token , set tokenURI and return currentTokenId
      /// @param _tokenURI, a tokenURI obtained from IPFS
+     /// @param price , nft price
+     /// @param durationInSeconds , nft price
      /// @return currentTokenId, current token id
     function mintAuctionToken(string memory _tokenURI, uint256 price, uint256 durationInSeconds) external returns(uint256) {
         _tokenId.increment(); // increment tokenId

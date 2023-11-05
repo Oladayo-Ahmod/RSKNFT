@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\xampp\\htdocs\\blockchain_projects\\RSKNFT\\contract\\contracts\\RSKNFT.sol": {
-      "lastModificationDate": 1699179499573,
-      "contentHash": "ea1ac1470f7a03aa2024127ade600012",
+      "lastModificationDate": 1699179755650,
+      "contentHash": "316b087ef1c54bdd997ec2140667a796",
       "sourceName": "contracts/RSKNFT.sol",
       "solcConfig": {
         "version": "0.8.19",
