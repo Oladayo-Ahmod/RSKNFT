@@ -1,4 +1,4 @@
-const { ethers } = require('hardhat')
+const { ethers, network } = require('hardhat')
 const {assert,expect} = require('chai')
 
 describe('RSKNFT', ()=>{
@@ -84,6 +84,21 @@ describe('RSKNFT', ()=>{
                 expect(error.message).to.include('cannot bid on what you own')
             }
             
+        })
+
+        it("it withdraws the bid", async ()=>{
+            let [,bidder,highestBidder] = await ethers.getSigners()
+            const price = ethers.utils.parseEther('2')
+            const tx = await contract.mintAuctionToken("https://test-url",price,3600)
+            await tx.wait()
+            await contract.connect(bidder).bid(1, {value : ethers.utils.parseEther('4')})
+            await contract.connect(highestBidder).bid(1, {value : ethers.utils.parseEther('6')})
+            await network.provider.send('evm_increaseTime', [3600]) //increase time by 3600s
+            await network.provider.send('evm_mine')
+            const widthrawBid =  await contract.connect(bidder).withdrawBid(1)
+            console.log(widthrawBid);
+           
+
         })
     })
 
