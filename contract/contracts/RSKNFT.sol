@@ -18,6 +18,9 @@ contract RSKNFT is ERC721URIStorage {
 
 
     mapping (uint256 => NFT) NFT_ID;
+    mapping(uint256 => Listing) public listings;
+    mapping(uint256 => mapping(address => uint256)) public bids;
+    mapping(uint256 => address) public highestBidder;
 
     // nft struct
      struct NFT {
@@ -68,15 +71,15 @@ contract RSKNFT is ERC721URIStorage {
         return currentTokenId;
     }
 
-     function createNFT(uint256 tokenId, uint256 price) internal {
-        uint256 currentTokenId = _tokenId.current();
-        NFT_ID[currentTokenId] = NFT(
-            payable(address(this)),
-            payable(msg.sender),
-            price,
-            false,
-            tokenId
-        );
+    function createNFT(uint256 tokenId, uint256 price) internal {
+    uint256 currentTokenId = _tokenId.current();
+    NFT_ID[currentTokenId] = NFT(
+        payable(address(this)),
+        payable(msg.sender),
+        price,
+        false,
+        tokenId
+    );
 
         _transfer(msg.sender,address(this),tokenId); // transfer ownership of nft to the marketplace owner
 
@@ -90,6 +93,32 @@ contract RSKNFT is ERC721URIStorage {
         );
 
     }
+
+     function createAuctionListing (uint256 price, uint256 tokenId, uint256 durationInSeconds) public returns (uint256) {
+        listingCounter++;
+        uint256 listingId = listingCounter;
+
+        uint256 startAt = block.timestamp;
+        uint256 endAt = startAt + durationInSeconds;
+
+        listings[listingId] = Listing({
+            seller: msg.sender,
+            tokenId: tokenId,
+            price: price,
+            netPrice: price,
+            status: STATUS_OPEN,
+            startAt: startAt,
+            endAt: endAt
+        });
+
+        _transfer(msg.sender, address(this), tokenId);
+
+        emit AuctionCreated(listingId, msg.sender, price, tokenId, startAt, endAt);
+
+        return listingId;
+    }
+
+
 
      /// @dev NFT sales functionality and process payment to seller
     /// @param tokenId,  NFT token id
