@@ -96,7 +96,11 @@ describe('RSKNFT', ()=>{
             await network.provider.send('evm_increaseTime', [3600]) //increase time by 3600s
             await network.provider.send('evm_mine')
             const widthrawBid =  await contract.connect(bidder).withdrawBid(1)
-            console.log(widthrawBid);
+            const receipt = widthrawBid.wait()
+            const events = receipt.events.find(event => event.event === 'WithdrawBid');
+            assert.equal(events.args[3],'Withdraw bid successfully') // withdraws successfully
+
+
            
 
         })
