@@ -84,12 +84,12 @@ contract RSKNFT is ERC721URIStorage {
      /// @dev mint token , set tokenURI and return currentTokenId
      /// @param _tokenURI, a tokenURI obtained from IPFS
      /// @return currentTokenId, current token id
-    function mintAuctionToken(string memory _tokenURI, uint256 price) external returns(uint256) {
+    function mintAuctionToken(string memory _tokenURI, uint256 price, uint256 durationInSeconds) external returns(uint256) {
         _tokenId.increment(); // increment tokenId
         uint256 currentTokenId = _tokenId.current(); // get current tokenId
         _mint(msg.sender,currentTokenId); // mint token
         _setTokenURI(currentTokenId,_tokenURI); // set token uri from IPFS
-         createNFT(currentTokenId,price);
+         createAuctionListing(price,currentTokenId,durationInSeconds);
         return currentTokenId;
     }
 
@@ -118,10 +118,8 @@ contract RSKNFT is ERC721URIStorage {
 
 
      function createAuctionListing (uint256 price, uint256 tokenId, uint256 durationInSeconds) public returns (uint256) {
-        listingCounter++;
-                
-        uint256 listingId = listingCounter;
-
+        uint256 currentTokenId = _tokenId.current();
+        uint256 listingId = currentTokenId;
         uint256 startAt = block.timestamp;
         uint256 endAt = startAt + durationInSeconds;
 
