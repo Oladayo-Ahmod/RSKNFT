@@ -43,20 +43,35 @@ describe('RSKNFT', ()=>{
             const receipt = await tx.wait()
             const events = receipt.events.find(event => event.event === 'AuctionCreated');
             assert.equal(events.args[0],1) // token id equals
-        })
+        })       
 
-        // bidding
-        it("bidding", async ()=>{
-            let [,bidder1, bidder2, highestBidder] = await ethers.getSigners()
+    })
+
+      // bidding
+      describe("bidding functionality", function(){
+        it("it can bid", async ()=>{
+            let [,bidder] = await ethers.getSigners()
             const price = ethers.utils.parseEther('2')
             const tx = await contract.mintAuctionToken("https://test-url",price,3600)
             await tx.wait()
-            const firstBid = await contract.connect(bidder1).bid(1, {value : price})
-            const receipt = await firstBid.wait()
-            const events = receipt.events.find(event => event.event === 'AuctionCreated');
-            console.log(events);
+            const bid = await contract.connect(bidder).bid(1, {value : price})
+            const receipt = await bid.wait()
+            const events = receipt.events.find(event => event.event === 'BidCreated');
+            assert.equal(events.args[0],1)
         })
 
+        it("it cannot bid below previous bidder", async ()=>{
+            let [,bidder1,bidder2] = await ethers.getSigners()
+            const price = ethers.utils.parseEther('3')
+            const tx = await contract.mintAuctionToken("https://test-url",price,3600)
+            await tx.wait()
+            await contract.connect(bidder1).bid(1, {value : ethers.utils.parseEther('4')})
+            try {
+                await contract.connect(bidder2).bid(1, {value : ethers.utils.parseEther('3')})
+            } catch (error) {
+                expect(error.message).to.include('cannot bid below the latest bidding price')
+            }
+        })
     })
 
      // NFT sales
