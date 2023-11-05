@@ -96,7 +96,7 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
         string message
     );
 
-     constructor() ERC721("CeloNFT", "ASG"){
+     constructor() ERC721("CeloNFT", "CLT"){
         owner = payable(msg.sender);
     }
 
@@ -300,8 +300,8 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
         props = NFT_ID[tokenId];
     }
 
-      /// @notice retrieval of all purchased nfts that belong to a user
-    /// @return props
+        /// @notice retrieval of all purchased nfts that belong to a user
+        /// @return props
     function userNfts() external view returns (NFT[] memory) {
     uint currentTokenId = _tokenId.current();
     uint itemCount = 0;
