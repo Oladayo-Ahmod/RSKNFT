@@ -96,7 +96,7 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
         string message
     );
 
-     constructor() ERC721("CeloNFT", "CLT"){
+     constructor() ERC721("RSKNFT", "RST"){
         owner = payable(msg.sender);
     }
 
