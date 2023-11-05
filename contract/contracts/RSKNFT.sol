@@ -175,9 +175,14 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
             _transfer(address(this), listing.seller, listing.tokenId);
         }
 
-        listing.status = STATUS_DONE;
+        listing.status = COMPLETED_STATUS;
 
-        emit AuctionCompleted(listingId, listing.seller, winner, bids[listingId][winner]);
+        emit AuctionCompleted(
+            listingId,
+            listing.seller, 
+            winner, 
+            bids[listingId][winner]
+            );
     }
 
      /// @dev NFT sales functionality and process payment to seller
