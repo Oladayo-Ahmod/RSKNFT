@@ -27,7 +27,7 @@ describe('RSKNFT', ()=>{
 
     // NFT functionalities
     describe('NFT functionality', ()=>{
-         // creates token and returns ID
+         // creates token and returns correct ID
          it("mint token and create nft", async ()=>{
             const price = ethers.utils.parseEther('2')
             const tx = await contract.mintToken("https://test-url",price)
@@ -36,13 +36,25 @@ describe('RSKNFT', ()=>{
             assert.equal(events.args[0],1) // token id equals
         })
 
-        // creates nft auction token and returns ID
+        // creates nft auction token and returns correct ID
         it("mints oken and create nft auction", async ()=>{
             const price = ethers.utils.parseEther('2')
             const tx = await contract.mintAuctionToken("https://test-url",price,3600)
             const receipt = await tx.wait()
             const events = receipt.events.find(event => event.event === 'AuctionCreated');
             assert.equal(events.args[0],1) // token id equals
+        })
+
+        // bidding
+        it("bidding", async ()=>{
+            let [,bidder1, bidder2, highestBidder] = await ethers.getSigners()
+            const price = ethers.utils.parseEther('2')
+            const tx = await contract.mintAuctionToken("https://test-url",price,3600)
+            await tx.wait()
+            const firstBid = await contract.connect(bidder1).bid(1, {value : price})
+            const receipt = await firstBid.wait()
+            const events = receipt.events.find(event => event.event === 'AuctionCreated');
+            console.log(events);
         })
 
     })
