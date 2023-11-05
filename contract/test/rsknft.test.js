@@ -73,7 +73,7 @@ describe('RSKNFT', ()=>{
             }
         })
 
-        it("owner cannot bid ", async ()=>{
+        it("owner cannot bid on his item ", async ()=>{
             let [,bidder] = await ethers.getSigners()
             const price = ethers.utils.parseEther('2')
             const tx = await contract.mintAuctionToken("https://test-url",price,3600)
@@ -81,7 +81,7 @@ describe('RSKNFT', ()=>{
             try {
                 await contract.bid(1, {value : price})
             } catch (error) {
-                console.log(error.message);
+                expect(error.message).to.include('cannot bid on what you own')
             }
             
         })
