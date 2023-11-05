@@ -56,6 +56,8 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
         string message
     );
 
+    /// @dev Auction creation events
+    /// @param listingId, @param seller, @param price, @param tokenId, @param startAt, @param endAt, @param message
     event AuctionCreated(
         uint256 listingId, 
         address indexed seller, 
@@ -65,6 +67,16 @@ contract RSKNFT is ERC721URIStorage , ReentrancyGuard {
         uint256 endAt,
         string message    
     );
+
+    /// @dev Auction completed event
+    /// @param listingId, @param seller ,  @param bidder, @param bid
+    event AuctionCompleted(
+        uint256 listingId,
+        address indexed seller, 
+        address indexed bidder, 
+        uint256 bid
+    );
+
 
 
      constructor() ERC721("CeloNFT", "ASG"){
